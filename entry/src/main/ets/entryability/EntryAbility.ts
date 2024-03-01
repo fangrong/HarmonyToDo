@@ -1,6 +1,7 @@
 import UIAbility from '@ohos.app.ability.UIAbility';
 import hilog from '@ohos.hilog';
 import window from '@ohos.window';
+import { startEmit } from '../util/Emitter';
 
 export default class EntryAbility extends UIAbility {
   onCreate(want, launchParam) {
@@ -14,6 +15,9 @@ export default class EntryAbility extends UIAbility {
   onWindowStageCreate(windowStage: window.WindowStage) {
     // Main window is created, set main page for this ability
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
+    hilog.debug(0x1000,"todo","before emit")
+    startEmit()
+    hilog.debug(0x1000,"todo","after emit")
 
     windowStage.loadContent('pages/HomePage', (err, data) => {
       if (err.code) {
@@ -22,6 +26,7 @@ export default class EntryAbility extends UIAbility {
       }
       hilog.info(0x0000, 'testTag', 'Succeeded in loading the content. Data: %{public}s', JSON.stringify(data) ?? '');
     });
+
   }
 
   onWindowStageDestroy() {

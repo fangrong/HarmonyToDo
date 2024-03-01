@@ -3,6 +3,7 @@
     "pages/Index",
     "pages/HomePage",
     "pages/ToDoPage",
-    "pages/FinishedPage"
+    "pages/FinishedPage",
+    "pages/ThirdPage"
   ]
 }

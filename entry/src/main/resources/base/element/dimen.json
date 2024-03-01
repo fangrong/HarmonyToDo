@@ -1,0 +1,20 @@
+{
+  "float": [
+    {
+      "name": "font_size_todo_item_title",
+      "value": "16fp"
+    },
+    {
+      "name": "font_size_todo_item_create_time",
+      "value": "14fp"
+    },
+    {
+      "name": "size_width_todo_item_state",
+      "value": "50vp"
+    },
+    {
+      "name": "size_height_todo_item_state",
+      "value": "50vp"
+    }
+  ]
+}
