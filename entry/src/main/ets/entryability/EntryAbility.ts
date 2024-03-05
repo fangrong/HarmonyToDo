@@ -16,7 +16,7 @@ export default class EntryAbility extends UIAbility {
     // Main window is created, set main page for this ability
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
     hilog.debug(0x1000,"todo","before emit")
-    startEmit()
+    // startEmit()
     hilog.debug(0x1000,"todo","after emit")
 
     windowStage.loadContent('pages/HomePage', (err, data) => {
