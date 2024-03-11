@@ -10,7 +10,7 @@ export struct TodoItem {
       Text(this.todoData.content)
         .margin({
           top:"8vp",
-          left:"8vp",
+          left:"12vp",
           bottom:"4vp",
         })
         .fontColor(Color.Black)
@@ -24,7 +24,7 @@ export struct TodoItem {
         .fontColor(Color.Gray)
         .fontSize($r('app.float.font_size_todo_item_create_time'))
         .margin({
-          left:"8vp",
+          left:"12vp",
           bottom:"8vp"
         })
         .alignRules({
@@ -36,7 +36,7 @@ export struct TodoItem {
         .width($r('app.float.size_width_todo_item_state'))
         .height($r('app.float.size_height_todo_item_state'))
         .margin({
-          right:"8vp"
+          right:"12vp"
         })
         .objectFit(ImageFit.Auto)
         .alignRules({

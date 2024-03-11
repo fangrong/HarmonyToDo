@@ -4,6 +4,7 @@
     "pages/HomePage",
     "pages/ToDoPage",
     "pages/FinishedPage",
-    "pages/ThirdPage"
+    "pages/ThirdPage",
+    "pages/AddPage"
   ]
 }

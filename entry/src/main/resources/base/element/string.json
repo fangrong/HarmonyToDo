@@ -11,6 +11,14 @@
     {
       "name": "EntryAbility_label",
       "value": "label"
+    },
+    {
+      "name": "main_page_title",
+      "value": "to-do list"
+    },
+    {
+      "name": "add_todo",
+      "value": "add"
     }
   ]
 }

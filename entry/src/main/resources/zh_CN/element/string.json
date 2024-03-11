@@ -11,6 +11,14 @@
     {
       "name": "EntryAbility_label",
       "value": "label"
+    },
+    {
+      "name": "main_page_title",
+      "value": "待办清单"
+    },
+    {
+      "name": "add_todo",
+      "value": "添加"
     }
   ]
 }

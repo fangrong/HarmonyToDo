@@ -7,6 +7,7 @@ import { Third } from './ThirdPage'
 import Ability from '@ohos.app.ability.Ability'
 import { SideBar } from '../view/SideBar'
 import { ToolBar } from '../view/ToolBar'
+import router from '@ohos.router'
 
 let count = 10000
 
@@ -56,25 +57,31 @@ struct TodoHome {
         this.mainPage()
       }.controlButton(
         {
-          width:24,
-          height:24,
+          width:28,
+          height:28,
           top:12,
           left:12,
           icons:{
             hidden:$r('app.media.icon_more_96'),
-            shown:$r('app.media.icon_more_96'),
+            shown:$r('app.media.icons_left_96'),
             switching:$r('app.media.icon_more_96')
           }
         }
       ).sideBarWidth('75%')
     .height('100%')
     .width('100%')
+    .showSideBar(false)
   }
 
   @Builder
   mainPage(){
     RelativeContainer() {
-      ToolBar({title:'待办清单'})
+      ToolBar({title:$r('app.string.main_page_title'),
+      toolBtn:[{icon:$r('app.media.icon_add_48'),
+      title:$r('app.string.add_todo'),
+      onClick:()=>{
+        router.pushUrl({url:"pages/AddPage"})
+      }}]})
         .id('tool_bar')
         .alignRules({
           top:{anchor:'__container__',align:VerticalAlign.Top},

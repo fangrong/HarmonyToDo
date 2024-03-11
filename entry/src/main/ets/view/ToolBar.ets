@@ -2,12 +2,13 @@ import router from '@ohos.router'
 
 @Component
 export struct ToolBar {
-  @State title: string = ""
+  private title: string | Resource = ""
+  private  toolBarIconSize: Length = 28
   @State enableNaviBtn: boolean = false
   @State toolBtn: {
     icon: Resource,
     title: string | Resource,
-    onClick: () => {}
+    onClick: () => void
   }[] = []
 
   build() {
@@ -15,16 +16,14 @@ export struct ToolBar {
       if (this.enableNaviBtn) {
         Image($r('app.media.icons_left_96'))
           .objectFit(ImageFit.Auto)
-          .width('48vp')
-          .height('48vp')
+          .width(this.toolBarIconSize)
+          .height(this.toolBarIconSize)
           .alignRules({
             top: { anchor: '__container__', align: VerticalAlign.Top },
             bottom: { anchor: '__container__', align: VerticalAlign.Bottom },
             left: { anchor: '__container__', align: HorizontalAlign.Start },
           })
-          .margin({
-            right: '24vp'
-          })
+          .margin(12)
           .onClick(() => {
             router.back()
           })
@@ -32,7 +31,7 @@ export struct ToolBar {
 
       Text(this.title)
         .id('title')
-        .fontSize('32fp')
+        .fontSize('26fp')
         .fontColor(Color.White)
         .textAlign(TextAlign.Center)
         .alignRules({
@@ -45,14 +44,12 @@ export struct ToolBar {
 
       if (this.toolBtn.length == 1) {
         Image(this.toolBtn[0].icon)
-          .width('48vp')
-          .height('48vp')
+          .width(this.toolBarIconSize)
+          .height(this.toolBarIconSize)
           .id('tool_btn')
           .objectFit(ImageFit.Auto)
           .onClick(this.toolBtn[0].onClick)
-          .margin({
-            left: '24vp'
-          })
+          .margin(12)
           .alignRules({
             top: { anchor: '__container__', align: VerticalAlign.Top },
             bottom: { anchor: '__container__', align: VerticalAlign.Bottom },
@@ -60,13 +57,11 @@ export struct ToolBar {
           })
       } else if (this.toolBtn.length > 1) {
         Image($r('app.media.icon_more_96'))
-          .width('48vp')
-          .height('48vp')
+          .width(this.toolBarIconSize)
+          .height(this.toolBarIconSize)
           .id('tool_btn')
           .objectFit(ImageFit.Auto)
-          .margin({
-            left: '24vp'
-          })
+          .margin(12)
           .alignRules({
             top: { anchor: '__container__', align: VerticalAlign.Top },
             bottom: { anchor: '__container__', align: VerticalAlign.Bottom },
