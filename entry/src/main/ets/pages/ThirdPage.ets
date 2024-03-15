@@ -1,5 +1,6 @@
 import hilog from '@ohos.hilog'
 
+const TAG = "Third"
 @Component
 @Entry
 export struct Third{
@@ -11,7 +12,15 @@ export struct Third{
   }
 
   build(){
-    Text("Third page")
+    Column(){
+      Text("Third page");
+      Button("sync test")
+        .onClick(()=>{
+          setTimeout(()=>{
+            hilog.debug(1000,TAG,"on time out")
+          },3000)
+        })
+    }
   }
 
   callbackfun(data:any){

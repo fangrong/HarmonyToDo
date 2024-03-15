@@ -19,6 +19,18 @@
     {
       "name": "add_todo",
       "value": "add"
+    },
+    {
+      "name": "save",
+      "value": "save"
+    },
+    {
+      "name": "delete",
+      "value": "delete"
+    },
+    {
+      "name": "add_todo_hint",
+      "value": "write content here"
     }
   ]
 }

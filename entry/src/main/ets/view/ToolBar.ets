@@ -1,9 +1,14 @@
 import router from '@ohos.router'
+import hilog from '@ohos.hilog'
+import { ToDoDBHelper } from '../data/database/TodoDataBase'
+
+const TAG = "ToolBar"
 
 @Component
 export struct ToolBar {
   private title: string | Resource = ""
-  private  toolBarIconSize: Length = 28
+  private toolBarIconSize: Length = 28
+  private naviBtnClickEvent: () => void = null
   @State enableNaviBtn: boolean = false
   @State toolBtn: {
     icon: Resource,
@@ -14,19 +19,25 @@ export struct ToolBar {
   build() {
     RelativeContainer() {
       if (this.enableNaviBtn) {
-        Image($r('app.media.icons_left_96'))
+        Image($r('app.media.icon_left_100'))
+          .id('navi_btn')
           .objectFit(ImageFit.Auto)
           .width(this.toolBarIconSize)
           .height(this.toolBarIconSize)
+          // .onClick(() => {
+          //   hilog.debug(1000, TAG, "back button clicked")
+          //   if (this.naviBtnClickEvent != null) {
+          //     this.naviBtnClickEvent()
+          //   }
+          // })
+          .onClick(this.toolBtn[0].onClick)
           .alignRules({
             top: { anchor: '__container__', align: VerticalAlign.Top },
             bottom: { anchor: '__container__', align: VerticalAlign.Bottom },
             left: { anchor: '__container__', align: HorizontalAlign.Start },
           })
           .margin(12)
-          .onClick(() => {
-            router.back()
-          })
+
       }
 
       Text(this.title)
@@ -47,7 +58,9 @@ export struct ToolBar {
           .width(this.toolBarIconSize)
           .height(this.toolBarIconSize)
           .id('tool_btn')
-          .objectFit(ImageFit.Auto)
+          .objectFit(ImageFit.Auto)// .onClick(()=>{
+            //   hilog.debug(1000,TAG,"toolBtn on click")
+            // })
           .onClick(this.toolBtn[0].onClick)
           .margin(12)
           .alignRules({

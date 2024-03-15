@@ -18,7 +18,19 @@
     },
     {
       "name": "add_todo",
-      "value": "添加"
+      "value": "添加待办"
+    },
+    {
+      "name": "save",
+      "value": "保存"
+    },
+    {
+      "name": "delete",
+      "value": "删除"
+    },
+    {
+      "name": "add_todo_hint",
+      "value": "在这里写下待办内容"
     }
   ]
 }
